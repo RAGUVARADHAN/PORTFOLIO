@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body
+        {
+            background-color:black;
+        }
+        .nav
+        {
+            position: fixed; top: 250px;
+        }
+        .nav_imgs
+        {
+            position: absolute;
+        }
+        .nav_img
+        {
+            position: relative;padding:10px;
+        }
+        .nav_cont
+        {
+            position: absolute;
+            display: none;color: white; padding: 5px;
+        }
+        .nav_img:hover .nav_cont
+        {
+            display: inline-flex;
+        }
+        .nav_img:hover .img 
+        {
+            background-color: white; border-radius: 10px;
+        }
+        .img 
+        {
+            height: 40px;width: 40px;
+        }
+        .hi
+        {
+            color: whitesmoke;
+            position: absolute; left:200px;top:50px;
+            font-size: 40px;
+            font-family: 'Anton', sans-serif;
+        }
+        .name 
+        {
+            color: whitesmoke; 
+            position: absolute; left: 200px; top: 150px;
+            font-size: 40px;
+            font-family: 'Anton', sans-serif;
+        }
+        .Ragu 
+        {
+            color: yellow;
+        }
+        .Designer
+        {
+            color: whitesmoke;
+            position: absolute; left: 200px; top: 250px;
+            font-family: 'Anton', sans-serif; 
+            font-size: 50px;
+        }
+        .h
+        {
+            color: red;
+        }
+        .i 
+        {
+            color: red;
+        }
+        .W
+        {
+            color: red;font-size: 60px;
+        }
+        .home_cont
+        {
+            color:white; position: absolute;
+            top: 400px; left: 200px; 
+            margin-right: 350px;font-size: 20px;
+        }
+        .M
+        {
+            color:red;
+        }
+        .photo
+        {
+            border: 2px solid red;height: 200px;
+            position: absolute; width: 200px;
+            left:1000px;top:100px;
+        }
+        .Design
+        {
+            color: yellow;
+        }
+        .education
+        {
+            color: whitesmoke;
+            position: absolute; left: 200px;
+            font-size: 40px;
+            top: 600px; font-family: 'Anton', sans-serif;
+        }
+        .E
+        {
+            color: red; font-family: 'Anton', sans-serif;
+            font-size: 60px;
+        }
+        .BE
+        {
+            color: whitesmoke; position: absolute;
+            top: 800px;left: 250px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-weight: bolder; font-size: 20px;
+            cursor: pointer;
+        }
+        .HSC
+        {
+            color: whitesmoke; position: absolute;
+            top: 1000px;left: 250px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-weight: bolder; font-size: 20px;
+            cursor: pointer;
+        }
+        .SSLC
+        {
+            color: whitesmoke; position: absolute;
+            top: 1200px;left: 250px;
+            font-family: 'Hind Siliguri', sans-serif;
+            font-weight: bolder; font-size: 20px;
+            cursor: pointer;
+        }
+        .course_bor
+        {
+            border: 2px solid red;
+            position: absolute;height: 550px;
+            left: 350px;top: 770px;
+        }
+        .BE_cont
+        {
+            position: absolute; left: 200px; top: -10px;
+            border: 2px solid white; width: 600px;
+            padding: 10px;border-radius: 10px;
+            font-weight: lighter;padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0px 0px white;
+        }
+        .HSC_cont
+        {
+            position: absolute; left: 200px; top: -20px;
+            border: 2px solid white; width: 600px;
+            padding: 10px; border-radius: 10px;
+            font-weight: lighter;padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .SSLC_cont
+        {
+            position: absolute; left: 200px; top: -30px;
+            border: 2px solid white; width: 600px;
+            padding: 10px; border-radius: 10px; 
+            font-weight: lighter;padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .BE:hover .BE_cont
+        {
+            font-size: 25px; position: relative;
+            top: -100px;background-color:rgb(15, 13, 13);
+            border: 1px solid rgb(15,13,13);
+            box-shadow: 2px 2px white;color:yellow;
+        }
+        .HSC:hover .HSC_cont
+        {
+            font-size: 25px; position: relative;
+            top: -100px;background-color:rgb(15, 13, 13);
+            border: 1px solid rgb(15,13,13);
+            box-shadow: 2px 2px white;color:yellow;
+        }
+        .SSLC:hover .SSLC_cont
+        {
+            font-size: 25px; position: relative;
+            top: -100px;background-color:rgb(15, 13, 13);
+            border: 1px solid rgb(15,13,13);
+            box-shadow: 2px 2px white;color:yellow;
+        }
+        .BE:hover
+        {
+            color: red;
+        }
+        .HSC:hover
+        {
+            color: red;
+        }
+        .SSLC:hover
+        {
+            color: red;
+        }
+        .skills
+        {
+            font-size: 40px; color: whitesmoke;
+            position: absolute; left: 200px; top: 1500px; 
+            font-family: 'Anton', sans-serif; 
+        }
+        .S
+        {
+            color: red;font-family: 'Anton', sans-serif;
+            font-size: 60px;
+        }
+        .tech
+        {
+            color: whitesmoke;
+            position: absolute; left: 250px; top: 1650px;
+            font-family: 'Inter', sans-serif;
+            font-weight: lighter;font-size: 20px;
+            border-right: 2px solid red; padding: 5px;
+        }
+        .skill_conts
+        {
+            position: absolute; left: 290px; top: 1700px;
+            border: 2px solid white; padding: 10px;
+            line-height: 35px; border-radius: 5px;
+        }
+        .skill_cont 
+        {
+            color: whitesmoke;list-style-type:none;
+        }
+        .AOI
+        {
+            color: whitesmoke; position: absolute; 
+            top:1670px; font-size: 20px;
+            left: 650px;font-family: 'Inter', sans-serif;
+            border-right: 2px solid red; padding:5px;
+        }
+        .AOI_conts
+        {
+            position: absolute; left: 700px; top: 1700px;
+            border: 2px solid white; padding: 10px;
+            line-height: 35px; border-radius: 5px;
+            color: whitesmoke;
+        }
+        .AOI_cont
+        {
+            list-style-type: none;
+        }
+        .Per_skills
+        {
+            color: whitesmoke; position: absolute; 
+            top:1670px; font-size: 20px;
+            left: 1150px;font-family: 'Inter', sans-serif;
+            border-right: 2px solid red; padding: 5px;
+        }
+        .Per_skills_conts
+        {
+            position: absolute; left: 1200px; top: 1700px;
+            border: 2px solid white; padding: 10px;
+            line-height: 35px; border-radius: 5px;
+            color: whitesmoke;
+        }
+        .Per_skills_cont
+        {
+            list-style-type:none;
+        }
+        .tech:hover .skill_conts
+        {
+            background-color: whitesmoke;position: relative;
+        }
+        .Projects
+        {
+            color: whitesmoke;
+            position: absolute; left: 250px; top: 2000px;
+            font-family: 'Inter', sans-serif;
+            font-weight: lighter;font-size: 20px;
+            border-right: 2px solid red; padding: 5px;
+        }
+        .Project_img1
+        {
+            border: 1px solid whitesmoke; position: absolute;
+            height: 100px; width: 100px;left: 350px;top: 2100px;
+        }
+        .Project_img2
+        {
+            border: 1px solid whitesmoke; position: absolute;
+            height: 100px; width: 100px;left: 600px;top: 2100px;
+        }
+        .Project_img1:hover
+        {
+            box-shadow: 5px 2px 5px white;
+        }
+        .Project_img2:hover
+        {
+            box-shadow: 5px 2px 5px white;
+        }
+        .contact
+        {
+            font-size: 40px; color: whitesmoke;
+            position: absolute; left: 200px; top: 2400px; 
+            font-family: 'Anton', sans-serif; 
+        }
+        .C 
+        {
+            color: red;font-family: 'Anton', sans-serif;
+            font-size: 60px;
+        }
+        .cont_bor
+        {
+            border: 1px solid rgb(15, 13, 13);
+            margin:0px; position: relative; 
+            top: 2600px; height: 250px;
+            background-color: rgb(38, 31, 31);
+            z-index:-1;margin-left: 70px;
+            border-radius: 10px; 
+        }
+        .location
+        {
+            color: whitesmoke;
+        }
+        .addr
+        {
+            padding-left: 100px;
+        }
+        .addr_cont
+        {
+            padding-left: 90px;
+        }
+        .addr_conts
+        {
+            padding-left: 40px;
+        }
+        .mail
+        {
+            position: absolute;height: 40px; width: 40px;
+            top:2610px;left: 600px;
+        }
+        .mail_id1
+        {
+            position: absolute;height: 40px; width: 40px;
+            top:2660px;left: 550px;
+        }
+        .mail_id2
+        {
+            position: absolute;height: 40px; width: 40px;
+            top:2690px; left: 550px; 
+        }
+        .globe
+        {
+            height: 40px; width: 40px;position: absolute; 
+            top: 2610px; left:1000px;
+        }
+        .cont_cont
+        {
+            color: white; position: absolute;
+            top: 2660px; left: 990px;
+        }
+        </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_imgs">
+            <div class="nav_img">
+                <img src="home.png" class="img">
+                <div class="nav_cont"><p>Home</p></div>
+            </div>
+            <div class="nav_img">
+                <img src="education.png" class="img">
+                <div class="nav_cont"><p>Education</p></div>
+            </div>
+            <div class="nav_img">
+                <img src="skill.png" class="img">
+                <div class="nav_cont"><p>Skills</p></div>
+            </div>
+            <div class="nav_img">
+                <img src="contact.png" class="img">
+                <div class="nav_cont"><p>Contact</p></div>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="hi"><p><span class="h">H</span>i</p></div>
+        <div class="name"><p><span class="i">I</span>' m <span class="Ragu">Ragu</span></p></div>
+        <div class="Designer"><p><span class="W">W</span>eb <span class="Design">Designer</span></p></div>
+        <div class="home_cont">
+            <p>
+            My interests are in Front End Engineering, and I love to create beautiful and performant products with delightful user experiences.
+        </p></div>
+    </div>
+    <div class="photo"><img src="my_photo.png" height="200px" width="200px"></div> 
+    <div>
+        <div class="education"><p><span class="E">E</span>DUCATION</p></div>
+        <div class="course_bor"></div>
+            <div class="BE"><p>BE</p>
+                <div class="BE_cont"><p>BannariAmman Institute of Technology<br>2020-2024<br>CGPA-8.65</p></div>
+            </div>
+            <div class="HSC"><p>HSC</p>
+                <div class="HSC_cont"><p>Noble Matric Higher Secondary School<br>2018-2020<br>78%</p></div>
+            </div>
+            <div class="SSLC"><p>SSLC</p>
+                <div class="SSLC_cont"><p>Sri Sowdambika Convent Matric Higher Secondary School<br>2016-2018<br>93.2%</p></div>
+            </div>
+    </div>
+    <div>
+        <div class="skills"><p><span class="S">S</span>KILLS</p></div>
+        <div><p class="tech">Technical skills</p></div>
+        <ul class="skill_conts">
+            <li class="skill_cont">Java - Intermediate</li>
+            <li class="skill_cont">C - Basics</li>
+            <li class="skill_cont">HTML -Intermediate</li>
+            <li class="skill_cont">CSS - Intermediate</li>
+        </ul>
+        <div class="AOI">Area of interests</div>
+        <ul class="AOI_conts">
+            <li class="AOI_cont">Web designing</li>
+            <li class="AOI_cont">Solving problems in online platforms</li>
+            <li class="AOI_cont">Psychology</li>
+        </ul>
+        <div class="Per_skills">Personal Skills</div>
+        <ul class="Per_skills_conts">
+            <li class="Per_skills_cont">Good in Leardership</li>
+            <li class="Per_skills_cont">Able to wrok in team</li>
+            <li class="Per_skills_cont">Willingness to learn</li>
+            <li class="Per_skills_cont">Adaptability</li>
+            <li class="Per_skills_cont">Adament in learning new things</li>
+        </ul>
+        <div class="Projects">Projects</div>
+        <div class="Project_imgs">
+            <div class="Project_img1"></div>
+            <div class="Project_img2"></div>
+        </div>
+    </div>
+    <div>
+        <div class="contact"><p><span class="C">C</span>ONTACT</p></div>
+        <div class="cont_bor">
+            <div class="location">
+                <img src="address.png" width="40px" height="40px" class="addr">
+                <p class="addr_cont">Address</p>
+                <p class="addr_conts">32/1,Kariyam Velliyan Street,<br>
+                Telephone Road,<br>
+                Aruppukottai.</p>
+            </div>
+        </div>
+        <div>
+            <img src="mail.png" class="mail">
+            <p style="color:white" class="mail_id1">raguvaradhansv@gmail.com</p>
+            <p style="color:white" class="mail_id2">raguvaradhanofficial@gmail.com</p>
+        </div>
+        <div>
+            <div>
+                <img src="globe.png" class="globe">
+                <p class="cont_cont">Contact me</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
